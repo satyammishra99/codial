@@ -38,11 +38,10 @@ passport.serializeUser(function(user,done){
 // deserialize the user from the cookies
 
 passport.deserializeUser( async function(id,done){
-    console.log(id);
+    //console.log(id);
     let user= await User.findById(id)
     console.log(user);
-       if(user){
-        
+       if(user){       
         return done(null,user);
        }else{
         return done(err);
