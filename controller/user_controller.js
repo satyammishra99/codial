@@ -74,5 +74,12 @@ module.exports.create= async function(req,res){
 
 module.exports.createSession= function(req,res){
     console.log(req.body);
-    return res.redirect('/user/profile');
+    return res.redirect('/');
+}
+
+module.exports.destroySession = function(req,res,next){
+    req.logout(function(err){
+        return next(err);
+    });
+    return res.redirect('/');
 }

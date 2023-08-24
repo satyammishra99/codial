@@ -4,6 +4,7 @@
   "description": "My all social web application",
   "main": "index.js",
   "scripts": {
+    "scss": "node-sass --watch assets/scss -o assets/css",
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,7 +20,10 @@
     "express-layout": "^0.1.0",
     "express-session": "^1.17.3",
     "mongoose": "^7.4.1",
+    "node-sass": "^9.0.0",
     "passport": "^0.6.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "sass": "^1.66.0",
+    "sass-middleware": "^0.0.3"
   }
 }

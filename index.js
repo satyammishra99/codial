@@ -11,6 +11,18 @@ const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo');
 
+const sass = require('sass');
+
+// app.use(sassMiddleware({
+//     src:'/assets/scss',
+//     dest:'/assets/css',
+//     debug: true,
+//     outputStyle:'exteneded',
+//     prefix:'/css'
+// }));
+
+
+
 app.use(express.urlencoded());
 app.use(cookieParser());
 const expresslayout= require('express-ejs-layouts');
@@ -23,6 +35,14 @@ app.use(expresslayout);
 app.set('view engine','ejs');
 app.set('views','./views');
 
+
+app.use('/scss', (req, res, next) => {
+    const filePath = './assets/scss/layout.scss';
+    const result ='./assets/css/layout' ;
+  
+    res.setHeader('Content-Type', 'text/css');
+    res.send(result.css);
+  });
 //mongo store is used to store the session cookies in the db
 app.use(session({
     name:'codial',
