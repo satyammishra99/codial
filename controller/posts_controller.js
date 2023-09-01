@@ -1,8 +1,8 @@
 const Post= require('../models/post');
 
 module.exports.create = function(req,res){
-    console.log('reachec post controler');
-    console.log(req.user._id);
+    //console.log('reachec post controler');
+    //console.log(req.user._id);
 
     try{
         const post = Post.create({
